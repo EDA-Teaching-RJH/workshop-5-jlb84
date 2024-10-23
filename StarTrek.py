@@ -51,10 +51,19 @@ def main():
 		replenish_resources() 
 
 def display_status(): 
-# TODO: Implement function to display ship status, resources, and crew 
+	print("Ship Status")
+	print(f"Systems: {ship['systems']}")
+	print(f"Resources: {ship['resources']}")
+	print(f"Crew:{list(ship['crew'].keys())}")
+	print()
 
 def get_user_action(): 
-# TODO: Implement function to get and return user's chosen action 
+	print("Choose an acion: ")
+	print("1. Run mission")
+	print("2. Repair system") 
+	print("3. Add crew member") 
+	print("4. End simulation")
+	return input ("Choose an action: ")
 
 def run_mission(): 
 	mission_type = random.choice(MISSION_TYPES) 
@@ -64,10 +73,37 @@ def run_mission():
 
 def repair_system(): 
 
-# TODO: Implement system repair functionality
- 
+	print("Which system would you like to repair? ")
+	print("1. Shields")
+	print("2. Weapons")
+	print("3. Engines")
+	print("4. Sensors")
+	choice = input ("Which system would you like to repair? ")
+
+if choice == "1"
+	ship['systems']['shields'] = 100
+	print("Shields repaired")
+elif choice == "2"
+	ship['systems']['weapons'] = 100
+	print("Weapons repaired)
+elif choice == "3"
+	ship['systems']['engines'] = 100
+	print("Engines repaired")
+elif choice == "4"
+	ship['systems']['sensors'] = 100
+	print("Sensors repaired")
+else
+	print("invalid choice")
+
 def add_crew_member(): 
-# TODO: Implement functionality to add a new crew member 
+	print("Add new crew member")
+ 	crew_new = input("Enter the name of the new crew member: ")
+  	role_new = input(f"Enter {crew_new}'s role: ")
+   if role_new in ["Command", "Operations", "Sciences"]:
+   ship["crew"][crew_new] = role_new
+   print(f"{crew_new}added to the crew as{role_new}.")
+   else 
+   print("Invalid role")
 
 def handle_random_event():
 # TODO: Implement random events that can occur during the simulation 
